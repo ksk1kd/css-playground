@@ -1,0 +1,135 @@
+:root {
+  --text-base: 1.4rem;
+  --text-xl: 2.0rem;
+  --text-8xl: 10.0rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color: #333;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: var(--text-base);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+section {
+  scroll-margin-top: 76px;
+  padding: 200px 40px;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  z-index: 100;
+}
+
+nav {
+  & ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    & a {
+      font-size: var(--text-xl);
+    }
+  }
+}
+
+#gradation {
+  & h1 {
+    display: block;
+    background-color: #c0ff99;
+    background-image:
+      radial-gradient(at 4% 40%, hsla(76, 100%, 66%, 1) 0px, transparent 50%),
+      radial-gradient(at 48% 21%, hsla(305, 100%, 72%, 1) 0px, transparent 50%),
+      radial-gradient(at 5% 75%, hsla(273, 100%, 79%, 1) 0px, transparent 50%),
+      radial-gradient(at 28% 93%, hsla(157, 100%, 72%, 1) 0px, transparent 50%),
+      radial-gradient(at 92% 73%, hsla(167, 100%, 70%, 1) 0px, transparent 50%),
+      radial-gradient(at 55% 67%, hsla(89, 100%, 61%, 1) 0px, transparent 50%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: var(--text-8xl);
+    text-align: center;
+  }
+}
+
+#glass {
+  background-image: url(../images/flower.jpg);
+  background-size: cover;
+
+  & ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    & li {
+      display: block;
+      width: calc((100% - 40px) / 3);
+      padding: 40px;
+      box-sizing: border-box;
+      background-color: rgb(100% 100% 100% / 0.5);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+
+      & p {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+#aspect {
+  & img {
+    display: block;
+    width: 500px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    margin: 0 auto;
+
+    @media (width <=1000px) {
+      width: 300px;
+      aspect-ratio: 1 / 1;
+    }
+  }
+}
+
+#scroll-snap {
+  & ul {
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    width: 640px;
+    margin: 0 auto;
+
+    & li {
+      display: block;
+      min-width: 480px;
+      height: 270px;
+      background-color: aquamarine;
+      text-align: center;
+      line-height: 270px;
+      scroll-snap-align: center;
+    }
+  }
+}
