@@ -209,3 +209,30 @@ nav {
     --hue: -360deg;
   }
 }
+
+#transition-display {
+  div {
+    width: 400px;
+    margin: 20px auto;
+  }
+
+  label + div {
+    display: none;
+    width: 400px;
+    height: 0px;
+    background-color: wheat;
+    transition-duration: 0.5s;
+    transition-behavior: allow-discrete;
+  }
+
+  label:has(input:checked) + div {
+    display: block;
+    height: 400px;
+  }
+
+  @starting-style {
+    label:has(input:checked) + div {
+      height: 0px;
+    }
+  }
+}
