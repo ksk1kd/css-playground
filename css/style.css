@@ -170,3 +170,42 @@ nav {
     transform: scale(120%);
   }
 }
+
+@property --hue {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+#property-animation {
+  div {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    background-image: linear-gradient(
+        60deg,
+        hsla(var(--hue) 95% 60% / 100%) 0%,
+        hsla(calc(var(--hue) + 36deg) 95% 60% / 0%) 100%
+      ),
+      linear-gradient(
+        180deg,
+        hsla(calc(var(--hue) + 72deg) 95% 60% / 100%) 0%,
+        hsla(calc(var(--hue) + 108deg) 95% 60% / 0%) 100%
+      ),
+      linear-gradient(
+        240deg,
+        hsla(calc(var(--hue) + 144deg) 95% 60% / 100%) 0%,
+        hsla(calc(var(--hue) + 180deg) 95% 60% / 0%) 100%
+      );
+    animation: hueRotation 5s linear infinite;
+  }
+}
+
+@keyframes hueRotation {
+  from {
+    --hue: 0deg;
+  }
+  to {
+    --hue: -360deg;
+  }
+}
