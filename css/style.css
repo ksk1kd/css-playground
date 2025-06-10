@@ -133,3 +133,17 @@ nav {
     }
   }
 }
+
+#align-content {
+  div {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    background-color: beige;
+    align-content: center;
+  }
+
+  p {
+    text-align: center;
+  }
+}
